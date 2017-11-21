@@ -19,12 +19,16 @@ var store = new vuex.Store({
       var url = '//bcw-getter.herokuapp.com/?url=';
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
-      $.get(apiUrl).then(data=>{
+      $.getJSON(apiUrl).then(data=>{
         commit('setResults', data)
       })
     },
-    getMyTunes({commit, dispatch}){
+    getMyTunes({commit, dispatch}, song){
       //this should send a get request to your server to return the list of saved tunes
+      $.get(url2).then(songs => {
+        commit('addToMyTunes', songs)
+    })
+
     },
     addToMyTunes({commit, dispatch}, track){
       //this will post to your server adding a new track to your tunes
