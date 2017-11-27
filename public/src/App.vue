@@ -1,3 +1,4 @@
+
 <template>
   <div id="app">
     <home></home>
@@ -6,13 +7,10 @@
 
 <script>
 import Home from './components/Home'
-
 export default {
   name: 'app',
   components: {
-    Home,
-    // Menu,
-    // Search
+    Home
   }
 }
 </script>
