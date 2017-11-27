@@ -1,32 +1,34 @@
 <template>
+    <div>
+
         <div>
-    
-            <div>
-                <form @submit="getMusicByArtist(artist)">
-                    <input type="text" class="search-field" name="search" placeholder="Search Posts">
-                    <button type="onsubmit">Search</button>
-                </form>
-            </div>
-    
+            <h4>My Tunes</h4>
         </div>
-    </template>
-    
-    <script>
-        export default {
-            data() {
-                return {
-                    artist: {}
-                }
-            },
-            mounted() {
-                this.$store.dispatch('getMusicByArtist')
-            },
-            methods: {
-    
-            },
-            computed: {
-    
+
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                artist: {}
             }
+        },
+        mounted() {
+            this.$store.dispatch('getMusicByArtist')
+        },
+        methods: {
+
+        },
+        computed: {
+
         }
-    </script>
-    <style></style>
+    }
+</script>
+<style>
+  h4 {
+color: white;
+text-align: center;
+  }
+</style>
