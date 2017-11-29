@@ -9,22 +9,37 @@ router.get('/api/songs', (req, res, next) => {
         .catch(err => res.status(400).send(err))
 })
 
-router.get('/api/songs/:id', (req, res, next) => {
-    Autos.findById(req.params.id)
-        .then(song => res.send(song))
+router.get('/api/songs', (req, res, next) => {
+    // not working
+    Songs.findById(req.params.id)
+        .then(songs => res.send(songs))
         .catch(err => res.status(400).send(err))
 })
 
-//CREATES NEW AUTO
+router.put('/api/songs', (req, res, next) => {
+    // not working
+    Songs.findById(req.params.id)
+        .then(songs => res.send(songs))
+        .catch(err => res.status(400).send(err))
+})
+
+// router.get('/api/songs/:id', (req, res, next) => {
+//     Autos.findById(req.params.id)
+//         .then(song => res.send(song))
+//         .catch(err => res.status(400).send(err))
+// })
+
+
 router.post('/api/songs', (req, res, next) => {
-    Autos.create(req.body)
-        .then(auto => res.send(auto))
+    debugger
+    Songs.create(req.body)
+        .then(song => res.send(song))
         .catch(err => res.status(400).send(err))
 })
 
 router.delete('/api/songs/:id', (req, res, next) => {
     Songs.findByIdAndRemove(req.params.id)
-        .then((song) => {
+        .then(() => {
             res.send({ message: 'Successfully removed song at ' + req.params.id })
         })
         .catch(err => res.status(400).send(err))

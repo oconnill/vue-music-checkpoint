@@ -13,6 +13,10 @@ var store = new vuex.Store({
     setResults(state, data) {
       // console.log(data)
       state.results = data.results
+    },
+    setToMyTunes(state, data){
+      //putting the favorited song into my tunes
+      state.myTunes = data 
     }
   },
   actions: {
@@ -33,9 +37,10 @@ var store = new vuex.Store({
     },
     addToMyTunes({ commit, dispatch }, track) {
       //this will post to your server adding a new track to your tunes
-      $.post(localhost, track)
+      debugger
+      $.post('http://localhost:4000/api/songs', track)
         .then(res => {
-          dispatch('getToMyTunes')
+          dispatch('getMyTunes')
         })
     },
     removeTrack({ commit, dispatch }, id) {
