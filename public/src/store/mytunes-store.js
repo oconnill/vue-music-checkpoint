@@ -10,49 +10,50 @@ var store = new vuex.Store({
     results: []
   },
   mutations: {
-    setResults(state, data){
-      console.log(data)
+    setResults(state, data) {
+      // console.log(data)
       state.results = data.results
     }
   },
   actions: {
-    getMusicByArtist({commit, dispatch}, artist) {
+    getMusicByArtist({ commit, dispatch }, artist) {
       var url = '//bcw-getter.herokuapp.com/?url=';
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
-      $.getJSON(apiUrl).then(data=>{
+      $.getJSON(apiUrl).then(data => {
         commit('setResults', data)
       })
     },
-    getMyTunes({commit, dispatch}, song){
+    getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
-      $.get(url2).then(songs => {
-        commit('addToMyTunes', songs)
-    })
+      $.get(localhost).then(data => {
+        commit('setToMyTunes', data)
+      })
 
     },
-    addToMyTunes({commit, dispatch}, track){
+    addToMyTunes({ commit, dispatch }, track) {
       //this will post to your server adding a new track to your tunes
-      $.post(url2).then(track => {
-        commit('addToMyTunes', track)
-    })
+      $.post(localhost, track)
+        .then(res => {
+          dispatch('getToMyTunes')
+        })
     },
-    removeTrack({commit, dispatch}, track){
+    removeTrack({ commit, dispatch }, id) {
       //Removes track from the database with delete
-        $.ajax({
-            method: 'DELETE',
-            url: url + '/' + i
-        }).then(res => dispatch('getMusicByArtist'))
-    },
-    promoteTrack({commit, dispatch}, track){
-      //this should increase the position / upvotes and downvotes on the track
-      $.put(url2).then(track => {
-        commit('addToMyTunes', track)
-    })
-    },
-    demoteTrack({commit, dispatch}, track){
-      //this should decrease the position / upvotes and downvotes on the track
+      $.ajax({
+        method: 'DELETE',
+        url: url + '/' + i
+      }).then(res => dispatch('getMyTunes'))
     }
+  //   promoteTrack({ commit, dispatch }, track) {
+  //     //this should increase the position / upvotes and downvotes on the track
+  //     $.put(url2).then(track => {
+  //       commit('addToMyTunes', track)
+  //     })
+  //   },
+  //   demoteTrack({ commit, dispatch }, track) {
+  //     //this should decrease the position / upvotes and downvotes on the track
+  //   }
 
   }
 })

@@ -3,7 +3,7 @@
 
         <div>
             <form @submit.prevent="getMusicByArtist()">
-                <input type="text" class="search-field" name="search" placeholder="" v-model="artist">
+                <input type="text" name="search" placeholder="Artist Search" v-model="artist">
                 <button type="submit">Search</button>
             </form>
             <div v-for="result in results">
@@ -23,17 +23,18 @@
     export default {
         data() {
             return {
-                artist: {}
+                artist: ''
             }
         },
-        getMusicByArtist() {
+        methods: {
+            
+            getMusicByArtist() {
             debugger
             this.$store.dispatch('getMusicByArtist', this.artist)
         },
         addToMyTunes(){
             this.$store.dispatch('addToMyTunes', i)
         },
-        methods: {
 
         },
         computed: {
