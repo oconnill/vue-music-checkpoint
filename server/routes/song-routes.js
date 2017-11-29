@@ -9,7 +9,7 @@ router.get('/api/songs', (req, res, next) => {
         .catch(err => res.status(400).send(err))
 })
 
-router.get('/api/songs', (req, res, next) => {
+router.get('/api/songs/:id', (req, res, next) => {
     // not working
     Songs.findById(req.params.id)
         .then(songs => res.send(songs))

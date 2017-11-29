@@ -30,7 +30,7 @@ var store = new vuex.Store({
     },
     getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
-      $.get(localhost).then(data => {
+      $.get('http://localhost:4000/api/songs').then(data => {
         commit('setToMyTunes', data)
       })
 

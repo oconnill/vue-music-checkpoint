@@ -25,7 +25,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch('getMusicByArtist')
+            this.$store.dispatch('getMyTunes')
         },
         methods: {
             removeTrack(id) {
