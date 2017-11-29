@@ -12,7 +12,7 @@
                 <h3>{{result.collectionName}}</h3>
                 <h3>{{result.artistName}}</h3>
                 <audio class="audio" controls="controls" :src="result.previewUrl"></audio>
-                <button class="btn btn-info" @click="addToMyTunes(i)">Add to Playlist</button>
+                <button class="btn btn-info" @click="addToMyTunes(result)">Add to Playlist</button>
             </div>
         </div>
 
@@ -27,13 +27,13 @@
             }
         },
         methods: {
-            
             getMusicByArtist() {
-            debugger
+            // debugger
             this.$store.dispatch('getMusicByArtist', this.artist)
         },
-        addToMyTunes(){
-            this.$store.dispatch('addToMyTunes', i)
+        addToMyTunes(result){
+            debugger
+            this.$store.dispatch('addToMyTunes', result)
         },
 
         },
