@@ -3,10 +3,13 @@ var Schema = mongoose.Schema
 var ObjectId = Schema.Types.ObjectId
 
 var schema = new Schema({
-    title: { type: String, required: true },
-    albumArt: { type: String, required: true, unique: true, dropDups: true },
-    artist: { type: String, required: true },
-    price: { type: String, required: true },
-    preview: { type: String, required: true },
-    playlist: {type: ObjectId, required: true }
+    title: { type: String},
+    albumArt: { type: String},
+    artist: { type: String},
+    price: { type: String},
+    preview: { type: String},
+    playlist: {type: ObjectId }
   })
+
+
+  module.exports = mongoose.model('Song', schema)

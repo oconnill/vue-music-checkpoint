@@ -33,7 +33,15 @@
         },
         addToMyTunes(result){
             debugger
-            this.$store.dispatch('addToMyTunes', result)
+            var single = {
+                    title: result.trackName,
+                    artist: result.artistName,
+                    img: result.artworkUrl100,
+                    price: result.trackPrice,
+                    album: result.collectionName,
+                    audio: result.previewUrl
+            }
+            this.$store.dispatch('addToMyTunes', single)
         },
 
         },
