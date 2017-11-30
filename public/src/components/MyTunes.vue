@@ -1,15 +1,15 @@
 <template>
-    <div>
 
         <div>
             <h4>My Tunes</h4>
             <div class="My-Tunes text-center">
-                <!-- <img :src="result.artworkUrl100">
-                <h5>{{.trackName}} ${{result.trackPrice}}</h5>
-                <h3>{{.collectionName}}</h3>
-                <h3>{{.artistName}}</h3>
-                <audio class="audio" controls="controls" :src="result.previewUrl"></audio> -->
-                <button class="btn btn-info" @click="removeTrack(id)">Remove</button>
+                <div v-for="mytune in myTunes">
+                <img :src="mytune.albumArt">
+                <h5>{{mytune.title}} ${{mytune.price}}</h5>
+                <h3>{{mytune.collectionName}}</h3>
+                <h3>{{mytune.artist}}</h3>
+                <audio class="audio" controls="controls" :src="mytune.preview"></audio>
+                <button class="btn btn-info" @click="removeTrack(mytune._id)">Remove</button>
             </div>
         </div>
 
@@ -21,19 +21,23 @@
         name: "myTunes",
         data() {
             return {
-                artist: {}
+                
             }
         },
         mounted() {
             this.$store.dispatch('getMyTunes')
         },
         methods: {
-            removeTrack(id) {
+        removeTrack(id) {
+           
         this.$store.dispatch('removeTrack', id)
       }
 
         },
         computed: {
+            myTunes() {
+        return this.$store.state.myTunes
+      }
 
         }
     }

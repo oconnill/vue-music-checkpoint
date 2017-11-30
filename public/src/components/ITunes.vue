@@ -21,6 +21,7 @@
 
 <script>
     export default {
+        name: 'itunes',
         data() {
             return {
                 artist: ''
@@ -28,21 +29,21 @@
         },
         methods: {
             getMusicByArtist() {
-            // debugger
             this.$store.dispatch('getMusicByArtist', this.artist)
         },
         addToMyTunes(result){
-            debugger
             var single = {
                     title: result.trackName,
                     artist: result.artistName,
-                    img: result.artworkUrl100,
+                    albumArt: result.artworkUrl100,
                     price: result.trackPrice,
-                    album: result.collectionName,
-                    audio: result.previewUrl
+                    preview: result.previewUrl
             }
             this.$store.dispatch('addToMyTunes', single)
         },
+        getMyTunes() {
+                this.$store.dispatch('getMyTunes')
+            }
 
         },
         computed: {

@@ -37,7 +37,6 @@ var store = new vuex.Store({
     },
     addToMyTunes({ commit, dispatch }, single) {
       //this will post to your server adding a new track to your tunes
-      // debugger
       $.post('http://localhost:4000/api/songs', single)
         .then(res => {
           dispatch('getMyTunes')
@@ -47,7 +46,8 @@ var store = new vuex.Store({
       //Removes track from the database with delete
       $.ajax({
         method: 'DELETE',
-        url: url + '/' + i
+        url:'http://localhost:4000/api/songs' + '/' + id
+        
       }).then(res => dispatch('getMyTunes'))
     }
   //   promoteTrack({ commit, dispatch }, track) {

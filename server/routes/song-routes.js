@@ -31,7 +31,6 @@ router.put('/api/songs', (req, res, next) => {
 
 
 router.post('/api/songs', (req, res, next) => {
-    debugger
     Songs.create(req.body)
         .then(song => res.send(song))
         .catch(err => res.status(400).send(err))
