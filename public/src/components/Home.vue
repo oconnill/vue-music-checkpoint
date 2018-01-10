@@ -1,9 +1,15 @@
 <template>
-  <div class="home">
-    <!-- YOU WILL PROBABLY END UP WITH SOMETHING LIKE THIS -->
-    <mytunes class="my-tunes"></mytunes>
-    <itunes class="itunes"></itunes>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <itunes class="itunes"></itunes>
+    </div>
+    <div class="col-sm-6">
+      <mytunes class="my-tunes"></mytunes>
+    </div>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -14,7 +20,7 @@
     components: {
       mytunes,
       itunes
-        },
+    },
     name: 'home',
     data() {
       return {
@@ -27,9 +33,9 @@
 
 <style>
   .my-tunes {
-    display: inline-block;
+    display: absolute;
     min-height: 500px;
-    min-width: 100%;
+    min-width: 50%;
     background: rgb(240, 89, 96);
   }
 
@@ -37,6 +43,6 @@
     display: absolute;
     background: rgb(196, 211, 230);
     min-height: 500px;
-    min-width: 100%;
+    min-width: 50%;
   }
 </style>

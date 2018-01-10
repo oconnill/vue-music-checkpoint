@@ -1,8 +1,10 @@
 
 <template>
+  <v-app>
   <div id="app">
     <home></home>
   </div>
+</v-app>
 </template>
 
 <script>
