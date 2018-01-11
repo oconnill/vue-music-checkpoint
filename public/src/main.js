@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import store from './store/mytunes-store'
 import Vuetify from 'vuetify'
-// import('path/to/node_modules/vuetify/dist/vuetify.min.css')
  
 Vue.use(Vuetify)
 
