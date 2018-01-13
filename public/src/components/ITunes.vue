@@ -17,7 +17,7 @@
 
         </v-layout>
 
-        <v-flex xs12>
+        <!-- <v-flex xs12>
             <div v-for="result in results" v-if="result[i].length % 2 === 0">
                 <v-card color="cyan darken-2" class="white--text">
                     <v-container fluid grid-list-lg>
@@ -65,7 +65,7 @@
                 </div>
             
         </v-flex>
-
+ -->
 
         <!-- <div class="col-sm-12 leg-room"></div>
         <div v-for="result in results">

@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <v-flex xs6>
+        <v-flex xs12>
             <h4>My Tunes</h4>
             <div class="My-Tunes text-center">
                 <div v-for="mytune in myTunes">

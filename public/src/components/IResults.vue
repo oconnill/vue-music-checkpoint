@@ -1,90 +1,102 @@
 <template>
 
-    <div>
-            <v-flex xs6>
-            <h4>IResults</h4>
-        
-            <div v-for="result in results" v-if="result.length % 2 === 0">
-                <v-card color="cyan darken-2" class="white--text">
-                    <v-container fluid grid-list-lg>
-                        <v-layout row>
-                            <v-flex xs7>
-                                <div>
-                                    <div class="headline">{{result.trackName}}</div>
-                                    <div>{{result.artistName}}</div>
-                                </div>
-                            </v-flex>
-                            <v-flex xs5>
-                                <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
+    <div class="grey lighten-3">
+            <v-flex xs12>
+                <h4>IResults</h4>
 
-                            </v-flex>
-                            <v-btn fab dark color="indigo">
+                <div v-for="result in results" v-if="result[i]">
+                    <v-card color="cyan darken-2" class="white--text">
+                        <v-container fluid grid-list-lg>
+                            <v-layout row>
+                                <v-flex xs7>
+                                    <div>
+                                        <div class="headline">{{result.trackName}}</div>
+                                        <div>{{result.artistName}}</div>
+                                    </div>
+                                </v-flex>
+                                <v-flex xs5>
+                                    <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
+
+                                </v-flex>
+                                <v-btn fab dark color="indigo">
                                     <v-icon dark>add</v-icon>
                                 </v-btn>
-                        </v-layout>
-                    </v-container>
-                </v-card>
-            </div>
-                <div v-else>
-                        <v-card color="blue-grey lighten-4" class="white--text">
-                                <v-container fluid grid-list-lg>
-                                    <v-layout row>
-                                        <v-flex xs7>
-                                            <div>
-                                                <div class="headline">{{result.trackName}}</div>
-                                                <div>{{result.artistName}}</div>
-                                                <audio class="audio" controls="controls" :src="result.previewUrl" contain></audio>
-                                                
-                                            </div>
-                                        </v-flex>
-                                        <v-flex xs5>
-                                            <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
-            
-                                        </v-flex>
-                                        <v-btn small fab dark color="#b2dfdb teal lighten-4">
-                                                <v-icon dark>add</v-icon>
-                                            </v-btn>
-                                    </v-layout>
-                                </v-container>
-                            </v-card>
-                        
+                            </v-layout>
+                            
+                        </v-container>
+                    </v-card>
+                    
                 </div>
-            
-        </v-flex>
-
-</div>
+                <div v-else>
+                    <v-card color="black" class="white--text">
+                        <v-container fluid grid-list-lg>
+                            <v-layout row>
+                                <v-flex xs7>
+                                    <div>
+                                        <div class="headline">{{result.trackName}}</div>
+                                        <div>{{result.artistName}}</div>
+                                        <audio class="audio" controls="controls" :src="result.previewUrl" contain></audio>
+                                    </div>
+                                </v-flex>
+                                <v-flex xs5>
+                                    <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
+                                </v-flex>
+                                <v-btn @click="addToMyTunes(result)" flat icon color="pink">
+                                        <v-icon>favorite</v-icon>
+                                      </v-btn>
+                            </v-layout>
+                        </v-container>
+                    </v-card>
+                    <br>
+                </div>
+            </v-flex>
+        </div>
 </template>
 
 <script>
-export default {
-    name: "iResults",
-    data() {
-        return {
+    export default {
+        name: "iResults",
+        data() {
             
-        }
-    },
-    mounted() {
-        this.$store.dispatch('getMyTunes')
-    },
-    methods: {
-    removeTrack(id) {
-       
-    this.$store.dispatch('removeTrack', id)
-  }
+            return {
 
-    },
-    computed: {
-        results() {
-            return this.$store.state.results
+            }
+        },
+        mounted() {
+            this.$store.dispatch('getMyTunes')
+        },
+        methods: {
+            removeTrack(id) {
+
+                this.$store.dispatch('removeTrack', id)
+            },
+            addToMyTunes(result) {
+                var single = {
+                    title: result.trackName,
+                    artist: result.artistName,
+                    albumArt: result.artworkUrl100,
+                    price: result.trackPrice,
+                    preview: result.previewUrl
+                }
+                this.$store.dispatch('addToMyTunes', single)
+            }
+
+        },
+        computed: {
+            results() {
+                return this.$store.state.results
+            }
         }
-  }
 
     }
 
 </script>
 <style>
-h4 {
-color: white;
-text-align: center;
-}
+    h4 {
+        color: white;
+        text-align: center;
+    }
+
+
+    
 </style>
