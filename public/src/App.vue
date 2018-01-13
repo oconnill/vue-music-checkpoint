@@ -1,7 +1,7 @@
 
 <template>
   <v-app>
-  <div id="app">
+  <div id="app" class="light-green accent-1">
     <home></home>
   </div>
 </v-app>
@@ -18,4 +18,6 @@ export default {
 </script>
 
 <style>
+#app{
+}
 </style>

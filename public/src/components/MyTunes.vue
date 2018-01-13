@@ -1,20 +1,21 @@
 <template>
 
-    <div>
-        <v-flex xs12>
-            <h4>My Tunes</h4>
-            <div class="My-Tunes text-center">
-                <div v-for="mytune in myTunes">
-                    <img :src="mytune.albumArt">
-                    <h5>{{mytune.title}} ${{mytune.price}}</h5>
-                    <h3>{{mytune.collectionName}}</h3>
-                    <h3>{{mytune.artist}}</h3>
-                    <audio class="audio" controls="controls" :src="mytune.preview"></audio>
-                    <button class="btn btn-info" @click="removeTrack(mytune._id)">Remove</button>
+    <v-card color="deep-purple darken-1" class="white--text op">
+            <v-flex xs12>
+                <div class="My-Tunes text-center">
+                    <div v-for="mytune in myTunes">
+                        <img :src="mytune.albumArt">
+                        <h5>{{mytune.title}} ${{mytune.price}}</h5>
+                        <h3>{{mytune.collectionName}}</h3>
+                        <h3>{{mytune.artist}}</h3>
+                        <audio class="audio" controls="controls" :src="mytune.preview"></audio>
+                        <div>
+                            <v-btn color="light-grey" @click="removeTrack(mytune._id)">Remove</v-btn>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </v-flex>
-    </div>
+            </v-flex>
+        </v-card>
 </template>
 
 <script>
@@ -47,5 +48,9 @@
     h4 {
         color: white;
         text-align: center;
+    }
+
+    #op {
+        opacity: 0.95;
     }
 </style>

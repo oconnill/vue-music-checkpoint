@@ -1,17 +1,18 @@
 <template>
+
     <div class="itunes">
         <div class="row">
 
             <div class="col-sm-12 head-room"></div>
         </div>
-
+        <h1>MUSIC + SELECTOR</h1>
         <v-layout row>
 
             <v-flex xs4>
             </v-flex>
             <v-flex xs8>
                 <form @submit.prevent="getMusicByArtist()" class="tbox">
-                    <v-text-field v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
+                    <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
                 </form>
             </v-flex>
 
@@ -77,7 +78,6 @@
             <button type="button" class="btn btn-danger" @click="addToMyTunes(result)">Add to Playlist</button>
         </div> -->
     </div>
-
 </template>
 
 <script>
@@ -118,6 +118,10 @@
 <style>
     .head-room {
         height: 200px
+    }
+    .itunes {
+        background-image: url("../universepurp.jpg");
+        image-rendering: auto;
     }
 
     .leg-room {

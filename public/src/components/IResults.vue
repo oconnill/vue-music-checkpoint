@@ -1,9 +1,7 @@
 <template>
 
-    <div class="grey lighten-3">
+    <div class="light-green accent-1">
             <v-flex xs12>
-                <h4>IResults</h4>
-
                 <div v-for="result in results" v-if="result[i]">
                     <v-card color="cyan darken-2" class="white--text">
                         <v-container fluid grid-list-lg>
@@ -16,32 +14,28 @@
                                 </v-flex>
                                 <v-flex xs5>
                                     <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
-
                                 </v-flex>
                                 <v-btn fab dark color="indigo">
                                     <v-icon dark>add</v-icon>
                                 </v-btn>
                             </v-layout>
-                            
                         </v-container>
                     </v-card>
-                    
                 </div>
                 <div v-else>
-                    <v-card color="black" class="white--text">
-                        <v-container fluid grid-list-lg>
+                    <v-card color="deep-purple darken-1" class="white--text op">
+                        <v-container fluid grid-list-sm>
                             <v-layout row>
                                 <v-flex xs7>
                                     <div>
                                         <div class="headline">{{result.trackName}}</div>
                                         <div>{{result.artistName}}</div>
-                                        <audio class="audio" controls="controls" :src="result.previewUrl" contain></audio>
                                     </div>
                                 </v-flex>
                                 <v-flex xs5>
                                     <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
                                 </v-flex>
-                                <v-btn @click="addToMyTunes(result)" flat icon color="pink">
+                                <v-btn @click="addToMyTunes(result)" flat icon color="white">
                                         <v-icon>favorite</v-icon>
                                       </v-btn>
                             </v-layout>
@@ -96,7 +90,9 @@
         color: white;
         text-align: center;
     }
-
+    .op {
+        opacity: 0.8;  
+    }
 
     
 </style>
