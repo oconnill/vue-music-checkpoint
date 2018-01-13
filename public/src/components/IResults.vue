@@ -24,7 +24,7 @@
                 </div>
                 <div v-else>
                     <v-card color="deep-purple darken-1" class="white--text op">
-                        <v-container fluid grid-list-sm>
+                        <v-container fluid grid-list-lg>
                             <v-layout row>
                                 <v-flex xs7>
                                     <div>
