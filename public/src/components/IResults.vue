@@ -2,27 +2,7 @@
 
     <div class="light-green accent-1">
             <v-flex xs12>
-                <div v-for="result in results" v-if="result[i]">
-                    <v-card color="cyan darken-2" class="white--text">
-                        <v-container fluid grid-list-lg>
-                            <v-layout row>
-                                <v-flex xs7>
-                                    <div>
-                                        <div class="headline">{{result.trackName}}</div>
-                                        <div>{{result.artistName}}</div>
-                                    </div>
-                                </v-flex>
-                                <v-flex xs5>
-                                    <v-card-media :src="result.artworkUrl100" height="125px" contain></v-card-media>
-                                </v-flex>
-                                <v-btn fab dark color="indigo">
-                                    <v-icon dark>add</v-icon>
-                                </v-btn>
-                            </v-layout>
-                        </v-container>
-                    </v-card>
-                </div>
-                <div v-else>
+                <div>
                     <v-card color="deep-purple darken-1" class="white--text op">
                         <v-container fluid grid-list-lg>
                             <v-layout row>

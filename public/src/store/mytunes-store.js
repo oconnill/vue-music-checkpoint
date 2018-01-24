@@ -11,11 +11,9 @@ var store = new vuex.Store({
   },
   mutations: {
     setResults(state, data) {
-      // console.log(data)
       state.results = data.results
     },
     setToMyTunes(state, data){
-      //putting the favorited song into my tunes
       state.myTunes = data 
     }
   },
@@ -50,22 +48,8 @@ var store = new vuex.Store({
         
       }).then(res => dispatch('getMyTunes'))
     }
-  //   promoteTrack({ commit, dispatch }, track) {
-  //     //this should increase the position / upvotes and downvotes on the track
-  //     $.put(url2).then(track => {
-  //       commit('addToMyTunes', track)
-  //     })
-  //   },
-  //   demoteTrack({ commit, dispatch }, track) {
-  //     //this should decrease the position / upvotes and downvotes on the track
-  //   }
 
   }
 })
 
 export default store
-///routes
-//getmytunes get
-//addsong to list post
-//updateranking - put
-//delete from list - delete
