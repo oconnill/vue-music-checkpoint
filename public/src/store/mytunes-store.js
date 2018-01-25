@@ -13,7 +13,7 @@ var store = new vuex.Store({
     setResults(state, data) {
       state.results = data.results
     },
-    setToMyTunes(state, data){
+    setMyTunes(state, data){
       state.myTunes = data 
     }
   },
@@ -30,7 +30,8 @@ var store = new vuex.Store({
     getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
       $.getJSON('https://vue-music-oconnell.herokuapp.com/music/songs').then(data => {
-        commit('setToMyTunes', data)
+        console.log(data)
+        commit('setMyTunes', data)
       })
 
     },
