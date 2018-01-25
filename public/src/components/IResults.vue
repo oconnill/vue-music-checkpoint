@@ -37,11 +37,10 @@
             }
         },
         mounted() {
-            this.$store.dispatch('getMyTunes')
+            // this.$store.dispatch('getMyTunes')
         },
         methods: {
             removeTrack(id) {
-
                 this.$store.dispatch('removeTrack', id)
             },
             addToMyTunes(result) {

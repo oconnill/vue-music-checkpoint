@@ -31,7 +31,6 @@
         },
         methods: {
             removeTrack(id) {
-
                 this.$store.dispatch('removeTrack', id)
             }
 
