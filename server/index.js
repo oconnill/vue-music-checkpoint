@@ -12,7 +12,7 @@ var port = 4000
 server.use(cors({}))
 server.use(bp.json())
 server.use(bp.urlencoded({ extended: true }))
-server.use(express.static(__dirname + '../../public/dist'))
+server.use(express.static(__dirname + '/../public/dist'))
 
 server.use(songroutes)
 
