@@ -22,20 +22,21 @@ var store = new vuex.Store({
       var url = '//bcw-getter.herokuapp.com/?url=';
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
-      $.getJSON(apiUrl).then(data => {
-        commit('setResults', data)
+     $.getJSON('https://vue-music-oconnell.herokuapp.com/music/songs')
+      .then(songs => {
+        commit('setMyTunes', songs)
       })
     },
     getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
-      $.get('http://localhost:4000/api/songs').then(data => {
+      $.getJSON('https://vue-music-oconnell.herokuapp.com/music/songs').then(data => {
         commit('setToMyTunes', data)
       })
 
     },
     addToMyTunes({ commit, dispatch }, single) {
       //this will post to your server adding a new track to your tunes
-      $.post('http://localhost:4000/api/songs', single)
+      $.post('https://vue-music-oconnell.herokuapp.com/api/songs', single)
         .then(res => {
           dispatch('getMyTunes')
         })
@@ -44,8 +45,7 @@ var store = new vuex.Store({
       //Removes track from the database with delete
       $.ajax({
         method: 'DELETE',
-        url:'http://localhost:4000/api/songs' + '/' + id
-        
+        url:'https://vue-music-oconnell.herokuapp.com/api/songs' + '/' + id
       }).then(res => dispatch('getMyTunes'))
     }
 

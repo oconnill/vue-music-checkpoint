@@ -12,14 +12,13 @@ var port = 4000
 server.use(cors({}))
 server.use(bp.json())
 server.use(bp.urlencoded({ extended: true }))
-server.use(express.static(__dirname + '/public'))
+server.use(express.static(__dirname + '../../public/dist'))
 
 server.use(songroutes)
 
-server.listen(port, () => {
-    console.log('Server is running on port, ', port)
+server.listen(process.env.PORT || port, () => {
+    console.log('Server running on port: ', port)
 })
-
 ///routes
 //getmytunes get
 //addsong to list post
