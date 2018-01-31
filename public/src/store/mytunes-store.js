@@ -33,7 +33,6 @@ var store = new vuex.Store({
         console.log(data)
         commit('setMyTunes', data)
       })
-
     },
     addToMyTunes({ commit, dispatch }, single) {
       //this will post to your server adding a new track to your tunes
