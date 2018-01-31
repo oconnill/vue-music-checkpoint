@@ -23,7 +23,7 @@ var store = new vuex.Store({
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
      $.getJSON(url2)
-      .then(songs => {
+      .then(data => {
         commit('setMyTunes', data)
       })
     },
