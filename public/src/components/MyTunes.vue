@@ -39,7 +39,6 @@
             myTunes() {
                 return this.$store.state.myTunes
             }
-
         }
     }
 </script>

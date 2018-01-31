@@ -24,14 +24,12 @@ var store = new vuex.Store({
       var apiUrl = url + encodeURIComponent(url2);
      $.getJSON(url2)
       .then(data => {
-        console.log(data)
         commit('setResults', data)
       })
     },
     getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
       $.getJSON('https://vue-music-oconnell.herokuapp.com/api/songs').then(data => {
-        console.log(data)
         commit('setMyTunes', data)
       })
     },
