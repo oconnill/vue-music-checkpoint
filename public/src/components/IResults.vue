@@ -5,7 +5,7 @@
                 <div>
                     <v-card color="deep-purple darken-1" class="white--text op">
                         <v-container fluid grid-list-lg>
-                            <v-layout row>
+                            <v-layout row v-for="result in results">
                                 <v-flex xs7>
                                     <div>
                                         <div class="headline">{{result.trackName}}</div>
