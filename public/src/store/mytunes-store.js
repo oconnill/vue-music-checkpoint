@@ -29,7 +29,7 @@ var store = new vuex.Store({
     },
     getMyTunes({ commit, dispatch }) {
       //this should send a get request to your server to return the list of saved tunes
-      $.getJSON('https://vue-music-oconnell.herokuapp.com/music/songs').then(data => {
+      $.getJSON('https://vue-music-oconnell.herokuapp.com/api/songs').then(data => {
         console.log(data)
         commit('setMyTunes', data)
       })
