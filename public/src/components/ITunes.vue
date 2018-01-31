@@ -89,9 +89,13 @@
             }
         },
         methods: {
+            
+            // Search By Artist
             getMusicByArtist() {
                 this.$store.dispatch('getMusicByArtist', this.artist)
             },
+
+            // Adds to MyTunes DB
             addToMyTunes(result) {
                 var single = {
                     title: result.trackName,
@@ -102,10 +106,11 @@
                 }
                 this.$store.dispatch('addToMyTunes', single)
             },
+
+            // Recovers Saved Songs
             getMyTunes() {
                 this.$store.dispatch('getMyTunes')
             }
-
         },
         computed: {
             results() {
@@ -132,10 +137,4 @@
         width: 350px;
         color: white
     }
-
-
-    /* input[type=text] {
-        background-color: #3CBC8D;
-        color: white;
-    } */
 </style>

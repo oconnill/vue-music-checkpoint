@@ -31,18 +31,18 @@
     export default {
         name: "iResults",
         data() {
-            
             return {
-
             }
         },
         mounted() {
             // this.$store.dispatch('getMyTunes')
         },
         methods: {
+            // Removes Track from DB on ID
             removeTrack(id) {
                 this.$store.dispatch('removeTrack', id)
             },
+            // Adds Song to DB
             addToMyTunes(result) {
                 var single = {
                     title: result.trackName,
@@ -53,14 +53,12 @@
                 }
                 this.$store.dispatch('addToMyTunes', single)
             }
-
         },
         computed: {
             results() {
                 return this.$store.state.results
             }
         }
-
     }
 
 </script>
@@ -72,6 +70,4 @@
     .op {
         opacity: 0.8;  
     }
-
-    
 </style>
