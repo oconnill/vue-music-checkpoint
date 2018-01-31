@@ -24,7 +24,8 @@ var store = new vuex.Store({
       var apiUrl = url + encodeURIComponent(url2);
      $.getJSON(url2)
       .then(data => {
-        commit('setMyTunes', data)
+        console.log(data)
+        commit('setResults', data)
       })
     },
     getMyTunes({ commit, dispatch }) {
