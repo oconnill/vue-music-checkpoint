@@ -94,7 +94,7 @@
             getMusicByArtist() {
                 this.$store.dispatch('getMusicByArtist', this.artist)
             },
-            
+
             // Adds to MyTunes DB
             addToMyTunes(result) {
                 var single = {
