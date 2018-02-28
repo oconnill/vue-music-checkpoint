@@ -1,18 +1,15 @@
 <template>
-  <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-      <v-flex xs12>
-        <itunes class="itunes">
-        </itunes>
-      </v-flex>
-      <v-flex xs6>
-        <iresults class="iresults"></iresults>
-      </v-flex>
-      <v-flex xs6>
-        <mytunes class="my-tunes"></mytunes>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div class="row">
+    <div class="col-sm-12">
+      <itunes>
+      </itunes>
+    </div>
+    <div class="col-sm-6">
+      <iresults class="iresults"></iresults>
+    </div>
+    <div class="col-sm-6">
+      <mytunes class="my-tunes"></mytunes>
+    </div>
   </div>
 </template>
 
@@ -38,7 +35,6 @@
 
 
 <style>
-
   h1 {
     font-family: 'Unica One', cursive;
     color: white;

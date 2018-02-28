@@ -1,31 +1,25 @@
 <template>
 
-    <v-card color="deep-purple darken-1" class="white--text op">
-            <v-flex xs12>
-                <div class="My-Tunes text-center">
-                    <div v-for="mytune in myTunes">
-                        <img :src="mytune.albumArt">
-                        <h5>{{mytune.title}} ${{mytune.price}}</h5>
-                        <h3>{{mytune.collectionName}}</h3>
-                        <h3>{{mytune.artist}}</h3>
-                        <audio class="audio" controls="controls" :src="mytune.preview"></audio>
-                        <div>
-                            <v-btn color="light-grey" @click="removeTrack(mytune._id)">Remove</v-btn>
-                        </div>
-                    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-list" v-for="mytune in myTunes">
+                <div class="card-block">
+                  <h4 class="card-title"><img :src="mytune.albumArt"></h4>
+                  <h4 class="card-title">{{mytune.title}}</h4>
+                  <h4 class="card-title">{{mytune.artist}}</h4>
+                  <h4 class="card-title"><audio class="audio" controls="controls" :src="mytune.preview"></audio></h4>
+                  <h4 class="card-title"><a href="#"  @click.prevent="removeTrack(mytune._id)" class="btn btn-primary">-</a></h4>
+
                 </div>
-            </v-flex>
-        </v-card>
+              </div>
+          </div>
+        </div>
 </template>
 
 <script>
     export default {
         name: "myTunes",
-        data() {
-            return {
-
-            }
-        },
         mounted() {
             this.$store.dispatch('getMyTunes')
         },
@@ -33,7 +27,6 @@
             removeTrack(id) {
                 this.$store.dispatch('removeTrack', id)
             }
-
         },
         computed: {
             myTunes() {
@@ -51,4 +44,9 @@
     #op {
         opacity: 0.95;
     }
+
+    .card-list {
+      background-color: rgba(122, 61, 173, 0.8);
+    }
+
 </style>

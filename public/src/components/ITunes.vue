@@ -1,20 +1,13 @@
 <template>
 
-    <div class="itunes">
-        <div class="row">
-            <div class="col-sm-12 head-room"></div>
-        </div>
-        <h1>MUSIC + SELECTOR</h1>
-        <v-layout row>
-            <v-flex xs4>
-            </v-flex>
-            <v-flex xs8>
-                <form @submit.prevent="getMusicByArtist()" class="tbox">
-                    <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
-                </form>
-            </v-flex>
-        </v-layout>
-    </div>
+  <div class="row itunes">
+    <div class="col-sm-8 offset-sm-2">
+    <h1>MUSIC SELECTOR +</h1>
+            <form @submit.prevent="getMusicByArtist()" class="tbox">
+                <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
+            </form>
+          </div>
+  </div>
 </template>
 
 <script>
@@ -30,6 +23,7 @@
             // Search By Artist
             getMusicByArtist() {
                 this.$store.dispatch('getMusicByArtist', this.artist)
+                this.artist = "";
             },
 
             // Adds to MyTunes DB
@@ -57,13 +51,11 @@
     }
 </script>
 <style>
-    .head-room {
-        height: 200px
-    }
-
     .itunes {
         background-image: url("../universepurp.jpg");
-        image-rendering: auto;
+        width: auto;
+        overflow: hidden;
+
     }
 
     .leg-room {
@@ -72,6 +64,7 @@
 
     .tbox {
         width: 350px;
+        font-size: 60px;
         color: white
     }
 </style>

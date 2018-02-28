@@ -1,21 +1,33 @@
-
 <template>
-  <v-app>
-  <div id="app" class="light-green accent-1">
-    <home></home>
+  <div class="out">
+    <div class="container">
+      <div>
+        <home></home>
+      </div>
+    </div>
   </div>
-</v-app>
 </template>
 
 <script>
-import Home from './components/Home'
-export default {
-  name: 'app',
-  components: {
-    Home
+  import Home from './components/Home'
+  export default {
+    name: 'app',
+    components: {
+      Home
+    }
   }
-}
 </script>
 
 <style>
+  .container {
+    background-color: #8CFF92
+  }
+
+  .out {
+    background-color: #8CFF92
+  }
+
+  body {
+    background-color: #8CFF92
+  }
 </style>
