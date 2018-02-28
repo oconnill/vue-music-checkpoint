@@ -30,4 +30,8 @@
   body {
     background-color: #8CFF92
   }
+
+a:hover {
+    color: grey;
+}
 </style>

@@ -103,9 +103,10 @@
 
   .card-artistName {
     font-family: 'Roboto', sans-serif;
-    padding-top: 45px;
+    padding-top: 35px;
     padding-right: 8px;
     padding-left: 8px;
+    padding-bottom: 8px;
     width: 100%;
     font-size: 20px;
     color: white;
