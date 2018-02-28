@@ -1,8 +1,8 @@
 {
   "name": "vue-music-checkpoint",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Jake Overall <joverall@gmail.com>",
+  "description": "Music Selector",
+  "author": "Daniel O'Connell",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
