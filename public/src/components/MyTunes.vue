@@ -9,6 +9,7 @@
           <h4 class="card-title">
             <img :src="mytune.albumArt">
           </h4>
+          <!-- bottom card -->
           <h4 class="card-title">{{mytune.title}}</h4>
           <h4 class="card-title">{{mytune.artist}}</h4>
           <div class="card-audio">
