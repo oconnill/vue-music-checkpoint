@@ -1,54 +1,56 @@
 <template>
 
-  <div class="row itunes">
-    <div class="col-sm-8 offset-sm-2">
-    <h1>MUSIC SELECTOR +</h1>
+    <div class="row itunes">
+        <div class="col-sm-8 offset-sm-2">
+            <h1>MUSIC SELECTOR +</h1>
             <form @submit.prevent="getMusicByArtist()" class="tbox">
-                <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
+                <!--<v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>-->
+                <input v-model="artist" name="input-3" label="Search by Artist..." value="Input text"/>
             </form>
-          </div>
-  </div>
+        </div>
+    </div>
 </template>
 
 <script>
-    export default {
-        name: 'itunes',
-        data() {
-            return {
-                artist: ''
-            }
-        },
-        methods: {
+  export default {
+    name: 'itunes',
+    data() {
+      return {
+        artist: ''
+      }
+    },
+    methods: {
 
-            // Search By Artist
-            getMusicByArtist() {
-                this.$store.dispatch('getMusicByArtist', this.artist)
-                this.artist = "";
-            },
+      // Search By Artist
+      getMusicByArtist() {
+        debugger
+        this.$store.dispatch('getMusicByArtist', this.artist);
+        this.artist = "";
+      },
 
-            // Adds to MyTunes DB
-            addToMyTunes(result) {
-                var single = {
-                    title: result.trackName,
-                    artist: result.artistName,
-                    albumArt: result.artworkUrl100,
-                    price: result.trackPrice,
-                    preview: result.previewUrl
-                }
-                this.$store.dispatch('addToMyTunes', single)
-            },
-
-            // Recovers Saved Songs
-            getMyTunes() {
-                this.$store.dispatch('getMyTunes')
-            }
-        },
-        computed: {
-            results() {
-                return this.$store.state.results
-            }
+      // Adds to MyTunes DB
+      addToMyTunes(result) {
+        var single = {
+          title: result.trackName,
+          artist: result.artistName,
+          albumArt: result.artworkUrl100,
+          price: result.trackPrice,
+          preview: result.previewUrl
         }
+        this.$store.dispatch('addToMyTunes', single)
+      },
+
+      // Recovers Saved Songs
+      getMyTunes() {
+        this.$store.dispatch('getMyTunes')
+      }
+    },
+    computed: {
+      results() {
+        return this.$store.state.results
+      }
     }
+  }
 </script>
 <style>
     .itunes {
