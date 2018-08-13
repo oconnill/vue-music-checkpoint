@@ -2,7 +2,8 @@ import vue from 'vue'
 import vuex from 'vuex'
 import $ from 'jquery'
 
-vue.use(vuex)
+vue.use(vuex);
+
 
 var store = new vuex.Store({
   state: {

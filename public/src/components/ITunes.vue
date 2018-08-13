@@ -22,7 +22,7 @@
 
             // Search By Artist
             getMusicByArtist() {
-                this.$store.dispatch('getMusicByArtist', this.artist)
+                this.$store.dispatch('getMusicByArtist', this.artist);
                 this.artist = "";
             },
 
@@ -55,11 +55,10 @@
         background-image: url("../universepurp.jpg");
         width: auto;
         overflow: hidden;
-
     }
 
-    .leg-room {
-        height: 100px
+    ::placeholder{
+        color: white;
     }
 
     .tbox {

@@ -46,10 +46,6 @@
     text-align: center;
   }
 
-  #op {
-    opacity: 0.95;
-  }
-
   .card-list {
     background-color: rgba(122, 61, 173, 0.4);
     margin: 8px;

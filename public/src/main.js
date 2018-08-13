@@ -5,7 +5,7 @@ import App from './App'
 import store from './store/mytunes-store'
 import Vuetify from 'vuetify'
  
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 /* eslint-disable no-new */
 new Vue({
@@ -13,4 +13,4 @@ new Vue({
   template: '<App/>',
   store,
   components: { App }
-})
+});
