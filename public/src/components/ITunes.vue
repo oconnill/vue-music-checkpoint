@@ -55,6 +55,7 @@
         background-image: url("../universepurp.jpg");
         width: auto;
         overflow: hidden;
+
     }
 
     ::placeholder{
