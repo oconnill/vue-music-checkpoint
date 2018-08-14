@@ -1,13 +1,13 @@
 <template>
-
-  <div class="row itunes">
-    <div class="col-sm-8 offset-sm-2">
-    <h1>MUSIC SELECTOR +</h1>
+    <div class="row itunes">
+        <div class="col-sm-8 offset-sm-2">
+            <h1>MUSIC SELECTOR +</h1>
             <form @submit.prevent="getMusicByArtist()" class="tbox">
-                <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..." value="Input text"></v-text-field>
+                <v-text-field fab dark color="white" v-model="artist" name="input-3" label="Search by Artist..."
+                              value="Input text"></v-text-field>
             </form>
-          </div>
-  </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -52,13 +52,12 @@
 </script>
 <style>
     .itunes {
-        background-image: url("../universepurp.jpg");
-        width: auto;
-        overflow: hidden;
-
+        background: url("../universepurp.jpg") no-repeat;
+        background-size: cover;
+        height: 650px;
     }
 
-    ::placeholder{
+    ::placeholder {
         color: white;
     }
 
